@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { FcGoogle } from "react-icons/fc";
 import { GrGithub } from "react-icons/gr";
 import { Link } from "react-router-dom";
+import logo from "../../assets/library.png"
 
 const Login = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -12,6 +13,9 @@ const Login = () => {
     return (
         <div>
         <div className="mx-auto md:w-1/2">
+        <div className="flex justify-center">
+            <img className="text-center w-20 h-20" src={logo} alt="" />
+            </div>
            <h2 className="text-3xl mb-6 text-center">Please Login</h2>
            <form onSubmit={handleSubmit(onSubmit)}>
               
