@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, json } from "react-router-dom";
 import logo from "../../assets/library.png"
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProviders";
@@ -20,6 +20,7 @@ const Register = () => {
             const loggedUser = res.user;
             console.log('user created successfully', loggedUser)
             updateUserProfile(data.name, data.photo)
+
         })
     }
 
