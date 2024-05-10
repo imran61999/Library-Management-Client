@@ -1,8 +1,15 @@
-import { Link, NavLink } from "react-router-dom";
+
 import logo from "../../../assets/library.png";
+import { useContext } from "react";
+import { AuthContext } from "../../../Providers/AuthProviders";
+import { Link, NavLink } from "react-router-dom";
 
 
 const Navbar = () => {
+  const { logOut } = useContext(AuthContext)
+  const handleLogout = ()=>{
+    logOut();
+  }
   const links = 
   <>
         <li><NavLink to="/">Home</NavLink></li>
@@ -31,6 +38,7 @@ const Navbar = () => {
   <div className="navbar-end">
   <Link to="/login"><button className="btn btn-ghost btn-sm">Login</button></Link>
   <Link to="/register"><button className="btn btn-ghost btn-sm">Register</button></Link>
+  <button onClick={handleLogout} className="btn btn-ghost btn-sm">Logout</button>
   </div>
 </div>
     );
