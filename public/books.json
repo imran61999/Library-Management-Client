@@ -1,6 +1,6 @@
 [
     {
-      "image": "https://example.com/book1.jpg",
+      "image": "https://i.ibb.co/PZHrfRy/book1.jpg",
       "name": "The Great Gatsby",
       "quantity": 50,
       "author_name": "F. Scott Fitzgerald",
@@ -9,7 +9,7 @@
       "rating": 4.5
     },
     {
-      "image": "https://example.com/book2.jpg",
+      "image": "https://i.ibb.co/JWLrSXk/book2.jpg",
       "name": "To Kill a Mockingbird",
       "quantity": 40,
       "author_name": "Harper Lee",
@@ -18,7 +18,7 @@
       "rating": 4.8
     },
     {
-      "image": "https://example.com/book3.jpg",
+      "image": "https://i.ibb.co/D9D2zr2/book3.jpg",
       "name": "1984",
       "quantity": 60,
       "author_name": "George Orwell",
@@ -27,7 +27,7 @@
       "rating": 4.7
     },
     {
-      "image": "https://example.com/book4.jpg",
+      "image": "https://i.ibb.co/cN4kSwf/book4.jpg",
       "name": "The Catcher in the Rye",
       "quantity": 30,
       "author_name": "J.D. Salinger",
@@ -36,7 +36,7 @@
       "rating": 4.2
     },
     {
-      "image": "https://example.com/book5.jpg",
+      "image": "https://i.ibb.co/84Fh1vK/book5.jpg",
       "name": "Pride and Prejudice",
       "quantity": 45,
       "author_name": "Jane Austen",
@@ -45,7 +45,7 @@
       "rating": 4.6
     },
     {
-      "image": "https://example.com/book6.jpg",
+      "image": "https://i.ibb.co/c2v88hn/book6.png",
       "name": "The Hobbit",
       "quantity": 55,
       "author_name": "J.R.R. Tolkien",
@@ -54,7 +54,7 @@
       "rating": 4.9
     },
     {
-      "image": "https://example.com/book7.jpg",
+      "image": "https://i.ibb.co/y6NtkMq/book7.jpg",
       "name": "The Hunger Games",
       "quantity": 35,
       "author_name": "Suzanne Collins",
@@ -63,7 +63,7 @@
       "rating": 4.4
     },
     {
-      "image": "https://example.com/book8.jpg",
+      "image": "https://i.ibb.co/dcLzc1B/book8.jpg",
       "name": "Harry Potter and the Philosopher's Stone",
       "quantity": 25,
       "author_name": "J.K. Rowling",
@@ -72,7 +72,7 @@
       "rating": 4.9
     },
     {
-      "image": "https://example.com/book9.jpg",
+      "image": "https://i.ibb.co/QP1fPHz/book9.jpg",
       "name": "The Da Vinci Code",
       "quantity": 20,
       "author_name": "Dan Brown",
@@ -81,7 +81,7 @@
       "rating": 4.3
     },
     {
-      "image": "https://example.com/book10.jpg",
+      "image": "https://i.ibb.co/6Hr0BDR/book10.jpg",
       "name": "The Alchemist",
       "quantity": 50,
       "author_name": "Paulo Coelho",
@@ -90,7 +90,7 @@
       "rating": 4.7
     },
     {
-      "image": "https://example.com/book11.jpg",
+      "image": "https://i.ibb.co/54g57xJ/book11.jpg",
       "name": "The Girl with the Dragon Tattoo",
       "quantity": 40,
       "author_name": "Stieg Larsson",
@@ -99,7 +99,7 @@
       "rating": 4.5
     },
     {
-      "image": "https://example.com/book12.jpg",
+      "image": "https://i.ibb.co/TBVZcfG/book12.jpg",
       "name": "The Lord of the Rings",
       "quantity": 60,
       "author_name": "J.R.R. Tolkien",
@@ -108,4 +108,3 @@
       "rating": 4.8
     }
   ]
-  
