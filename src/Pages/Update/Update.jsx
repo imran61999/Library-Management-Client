@@ -5,30 +5,35 @@ import Swal from "sweetalert2";
 
 const Update = () => {
     const book = useLoaderData();
-    console.log(book)
-    const { name } = book;
 
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    // console.log(book)
+    const { _id, image, book_name, author_name, category_name, rating, quantity, description } = book;
+
+    const { register, handleSubmit } = useForm();
     
 
     const onSubmit = data =>{
         
-        console.log(data)
-
-       fetch('http://localhost:5000/books',{
-        method:'POST',
-        headers:{
-            'content-type':'application/json'
-        },
-        body: JSON.stringify(data)
-       })
-       .then(res => res.json())
-       .then(result =>{
-        console.log(result)
-        if(result.insertedId){
-            Swal.fire("Book updated successfully");
-        }
-       })
+        const updatedBook = { ...data}
+        fetch(`http://localhost:5000/update/${_id}`,{
+            method:'PUT',
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify(updatedBook)
+        })
+        .then(res => res.json())
+        .then(data =>{
+            if(data.modifiedCount>0){
+                Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Book updated successfully",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+            }
+        })
         
     }
     
@@ -43,10 +48,8 @@ const Update = () => {
                         <span className='label-text'>Photo URL</span>
                     </label>
                     <label className="input-group">
-                        <input type="text" {...register('image', {required: true})} placeholder='Photo URL' className='input input-bordered w-full' />
-                        {
-                            errors.image && <span className="text-red-500">Photo is required</span>
-                        }
+                        <input type="text" {...register('image')} defaultValue={image} className='input input-bordered w-full' />
+                        
                     </label>
                 </div>
                 <div className='form-control md:w-1/2'>
@@ -54,10 +57,8 @@ const Update = () => {
                         <span className='label-text'>Book_Name</span>
                     </label>
                     <label className="input-group">
-                        <input type="text" {...register('book_name', { required: true })} placeholder='Book name' className='input input-bordered w-full' />
-                        {
-                            errors.book_name && <span className="text-red-500">Book Name is required</span>
-                        }
+                        <input type="text" {...register('book_name')} defaultValue={book_name} className='input input-bordered w-full' />
+                      
                     </label>
                 </div>
             </div>
@@ -68,8 +69,8 @@ const Update = () => {
                     <div className="label">
                         <span className="label-text">Category</span>
                     </div>
-                    <select className="select select-bordered w-full" {...register('category_name')} >
-                        <option disabled selected value="">Pick one</option>
+                    <select className="select select-bordered w-full" {...register('category_name')} defaultValue={category_name} >
+                        <option disabled value="">Pick one</option>
                             <option value="Novel">Novel</option>
                             <option value="Thriller">Thriller</option>
                             <option value="History">History</option>
@@ -83,10 +84,8 @@ const Update = () => {
                         <span className='label-text'>Quantity of books</span>
                     </label>
                     <label className="input-group">
-                        <input type="number" {...register('quantity')} placeholder='Quantity' className='input input-bordered w-full' />
-                        {
-                            errors.quantity && <span className="text-red-500">Quantity is required</span>
-                        }
+                        <input type="number" {...register('quantity')} defaultValue={quantity} className='input input-bordered w-full' />
+                        
                     </label>
                 </div>
             </div>
@@ -97,10 +96,8 @@ const Update = () => {
                         <span className='label-text'>Author Name</span>
                     </label>
                     <label className="input-group">
-                        <input type="text" {...register('author_name',{required: true})} placeholder='Author Name' className='input input-bordered w-full' />
-                        {
-                            errors.author_name && <span className="text-red-500">Author Name is required</span>
-                        }
+                        <input type="text" {...register('author_name')} defaultValue={author_name} className='input input-bordered w-full' />
+        
                     </label>
                 </div>
                 <div className='form-control md:w-1/2'>
@@ -108,10 +105,7 @@ const Update = () => {
                         <span className='label-text'>Rating</span>
                     </label>
                     <label className="input-group">
-                        <input type="number" {...register('rating',{required: true})} placeholder='Give Any Rating 1 to 5' className='input input-bordered w-full' />
-                        {
-                            errors.rating && <span className="text-red-500">Rating is required</span>
-                        }
+                        <input type="number" {...register('rating',{required: true})} defaultValue={rating} className='input input-bordered w-full' />
                     </label>
                 </div>
             </div>
@@ -122,15 +116,12 @@ const Update = () => {
                         <span className='label-text'>Short Description</span>
                     </label>
                     <label className="input-group">
-                        <input type="text" {...register('description',{required:true})} placeholder='Description' className='input input-bordered w-full' />
-                        {
-                            errors.description && <span className="text-red-500">Description is required</span>
-                        }
+                        <input type="text" {...register('description',{required:true})} defaultValue={description} className='input input-bordered w-full' />
                     </label>
                 </div>
             </div>
             <div className='text-center'>
-            <input className="btn btn-secondary w-1/2 mb-2" type="submit" value="Add" />
+            <input className="btn btn-secondary w-1/2 mb-2" type="submit" value="Update" />
             </div>
         </form>
 
