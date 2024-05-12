@@ -6,6 +6,7 @@ import Register from "../Pages/Register/Register";
 import Error from "../Pages/Error/Error";
 import AddBook from "../Pages/AddBook/AddBook";
 import AllBook from "../Pages/AllBook/AllBook";
+import Update from "../Pages/Update/Update";
 
   export const router = createBrowserRouter([
     {
@@ -32,6 +33,11 @@ import AllBook from "../Pages/AllBook/AllBook";
         {
           path:'allBook',
           element:<AllBook></AllBook>
+        },
+        {
+          path:'/update/:id',
+          element: <Update></Update>,
+          loader: ({params})=>fetch(`http://localhost:5000/updateBook/${params.id}`)
         }
       ]
     },

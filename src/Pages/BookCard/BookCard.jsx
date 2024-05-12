@@ -1,19 +1,18 @@
+import { Link } from "react-router-dom";
 
 const BookCard = ({book}) => {
-    const {image, name, author_name} = book;
+    const {_id, image, name, author_name, category, rating} = book;
     return (
         <div className="card bg-base-100 shadow-xl">
   <figure><img src={image} alt="Shoes" /></figure>
   <div className="card-body">
     <h2 className="card-title">
      {name}
-      <div className="badge badge-secondary">NEW</div>
     </h2>
-    <p>If a dog chews shoes whose shoes does he choose?</p>
-    <div className="card-actions justify-end">
-      <div className="badge badge-outline">Fashion</div> 
-      <div className="badge badge-outline">Products</div>
-    </div>
+    <p> <strong>Author:</strong>{author_name}</p>
+    <p> <strong>Category:</strong>{category}</p>
+    <p> <strong>Rating:</strong>{rating}</p>
+    <Link to={`/update/${_id}`}><button className="btn btn-secondary btn-sm text-center">Update</button></Link>
   </div>
 </div>
     );

@@ -13,8 +13,8 @@ const AllBook = () => {
         })
     },[])
     return (
-        <div>
-           <h2>All Book: {books?.length}</h2>
+        <div className="mb-6">
+           <h2 className="text-center text-3xl">All Book: {books?.length}</h2>
            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {
                 books.map(book =><BookCard key={book._id} book={book}></BookCard>)
