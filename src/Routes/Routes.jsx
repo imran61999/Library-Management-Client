@@ -8,6 +8,7 @@ import AddBook from "../Pages/AddBook/AddBook";
 import AllBook from "../Pages/AllBook/AllBook";
 import Update from "../Pages/Update/Update";
 import SameCategory from "../Pages/SameCategory/SameCategory";
+import Details from "../Pages/Details/Details";
 
   export const router = createBrowserRouter([
     {
@@ -44,7 +45,12 @@ import SameCategory from "../Pages/SameCategory/SameCategory";
           path:'/sameCategory/:category',
           element:<SameCategory></SameCategory>,
           loader: ({params})=>fetch(`http://localhost:5000/sameCategory/${params.category}`)
-        }
+        },
+        {
+          path:'/details/:id',
+          element:<Details></Details>,
+          loader: ({params})=>fetch(`http://localhost:5000/details/${params.id}`)
+        },
       ]
     },
   ]);
