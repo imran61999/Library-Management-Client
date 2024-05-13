@@ -42,7 +42,8 @@ import SameCategory from "../Pages/SameCategory/SameCategory";
         },
         {
           path:'/sameCategory/:category',
-          element:<SameCategory></SameCategory>
+          element:<SameCategory></SameCategory>,
+          loader: ({params})=>fetch(`http://localhost:5000/sameCategory/${params.category}`)
         }
       ]
     },
