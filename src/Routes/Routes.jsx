@@ -7,6 +7,7 @@ import Error from "../Pages/Error/Error";
 import AddBook from "../Pages/AddBook/AddBook";
 import AllBook from "../Pages/AllBook/AllBook";
 import Update from "../Pages/Update/Update";
+import SameCategory from "../Pages/SameCategory/SameCategory";
 
   export const router = createBrowserRouter([
     {
@@ -31,13 +32,17 @@ import Update from "../Pages/Update/Update";
           element:<AddBook></AddBook>
         },
         {
-          path:'allBook',
+          path:'/allBook',
           element:<AllBook></AllBook>
         },
         {
           path:'/update/:id',
           element: <Update></Update>,
           loader: ({params})=>fetch(`http://localhost:5000/updateBook/${params.id}`)
+        },
+        {
+          path:'/sameCategory/:category',
+          element:<SameCategory></SameCategory>
         }
       ]
     },

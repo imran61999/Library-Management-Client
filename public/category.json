@@ -1,0 +1,27 @@
+[
+    {
+      "category": "Novel",
+      "image": "https://i.ibb.co/PZHrfRy/book1.jpg"
+    },
+    {
+      "category": "Thriller",
+      "image": "https://i.ibb.co/JWLrSXk/book2.jpg"
+    },
+    {
+      "category": "History",
+      "image": "https://i.ibb.co/cN4kSwf/book4.jpg"
+    },
+    {
+      "category": "Drama",
+      "image": "https://i.ibb.co/84Fh1vK/book5.jpg"
+    },
+    {
+      "category": "Computer & Tech",
+      "image": "https://i.ibb.co/D9D2zr2/book3.jpg"
+    },
+    {
+      "category": "Travel",
+      "image": "https://i.ibb.co/c2v88hn/book6.png"
+    }
+  ]
+  
