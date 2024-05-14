@@ -9,6 +9,7 @@ import AllBook from "../Pages/AllBook/AllBook";
 import Update from "../Pages/Update/Update";
 import SameCategory from "../Pages/SameCategory/SameCategory";
 import Details from "../Pages/Details/Details";
+import BorrowedBooks from "../Pages/BorowedBooks/BorrowedBooks";
 
   export const router = createBrowserRouter([
     {
@@ -51,6 +52,10 @@ import Details from "../Pages/Details/Details";
           element:<Details></Details>,
           loader: ({params})=>fetch(`http://localhost:5000/details/${params.id}`)
         },
+        {
+          path:'/borrowedBooks',
+          element:<BorrowedBooks></BorrowedBooks>
+        }
       ]
     },
   ]);
