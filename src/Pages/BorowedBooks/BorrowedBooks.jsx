@@ -15,12 +15,17 @@ const BorrowedBooks = () => {
             setBooks(data)
         })
     },[user?.email])
+
+    const handleReturnBook = (return_id)=>{
+        const newBooks = books.filter(book => book._id !== return_id)
+        setBooks(newBooks)
+    }
     return (
         <div className="mb-8">
             <h2 className="text-3xl text-center">My Borrowed List: {books?.length}</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                 {
-                    books.map(book => <BorrowCard key={book._id} book={book}></BorrowCard>)
+                    books.map(book => <BorrowCard key={book._id} book={book}  onReturn={() => handleReturnBook(book._id)} ></BorrowCard>)
                 }
             </div>
         </div>

@@ -1,6 +1,6 @@
 import Swal from "sweetalert2";
 
-const BorrowCard = ({book}) => {
+const BorrowCard = ({book, onReturn }) => {
     const { _id, image, book_name, category_name, return_date, borrow_date } = book;
 
     const handleReturn =()=>{
@@ -23,6 +23,7 @@ const BorrowCard = ({book}) => {
                     console.log(data)
                     if(data.deletedCount>0)
                         {
+                            onReturn();
                             Swal.fire("You return book successfully");
                         }
                 })
