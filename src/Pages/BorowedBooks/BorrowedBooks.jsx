@@ -16,9 +16,9 @@ const BorrowedBooks = () => {
         })
     },[user?.email])
     return (
-        <div>
-            <h2>Borrow page: {books?.length}</h2>
-            <div>
+        <div className="mb-8">
+            <h2 className="text-3xl text-center">My Borrowed List: {books?.length}</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                 {
                     books.map(book => <BorrowCard key={book._id} book={book}></BorrowCard>)
                 }

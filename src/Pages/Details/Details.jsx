@@ -13,8 +13,17 @@ const Details = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const onSubmit = data =>{
-        const borrowData = {...book, user: user?.email, return_date:data.return_date};
+        const currentDate = new Date();
+        const formattedDate = currentDate.toISOString().split('T')[0];
+
+        const borrowData = {...book,
+             user: user?.email, 
+             return_date:data.return_date,
+            borrow_date: formattedDate
+            };
+
         console.log(borrowData);
+        
         if(quantity>0){
             fetch(`http://localhost:5000/book/${_id}/decrease`,{
             method:'PATCH',
