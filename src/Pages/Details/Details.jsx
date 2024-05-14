@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProviders";
 import { useForm } from "react-hook-form";
@@ -8,34 +8,31 @@ const Details = () => {
     const { user } = useContext(AuthContext);
     const book = useLoaderData();
     const { _id, image, book_name, author_name, category_name, rating, quantity, description } = book;
+    console.log('book',book)
 
     const { register, handleSubmit } = useForm();
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const onSubmit = data =>{
+    const onSubmit = data => {
         const currentDate = new Date();
         const formattedDate = currentDate.toISOString().split('T')[0];
-
-        const borrowData = {...book,
-             user: user?.email, 
-             return_date:data.return_date,
+    
+        const borrowData = { 
+            userId: book._id, 
+            image: book.image, 
+            book_name: book.book_name, 
+            author_name: book.author_name,
+            category_name: book.category_name, 
+            rating: book.rating,
+            quantity: book.quantity, 
+            description: book.description,
+            user: user?.email, 
+            return_date: data.return_date,
             borrow_date: formattedDate
-            };
-
-        console.log(borrowData);
-        
-        if(quantity>0){
-            fetch(`http://localhost:5000/book/${_id}/decrease`,{
-            method:'PATCH',
-            headers:{
-                'content-type':'application/json'
-            },
-            body:JSON.stringify(book)
-        })
-        .then(res => res.json())
-        .then(data =>{
-            console.log('after incrasing', data); 
-            setIsModalOpen(false);// Close the modal after successful submission
+        };
+    
+    
+        if(quantity > 0) {
             fetch('http://localhost:5000/borrow/books',{
                 method:'POST',
                 headers:{
@@ -45,22 +42,39 @@ const Details = () => {
             })
             .then(res => res.json())
             .then(data => {
-                console.log('borrow info saved',data)
                 if(data.insertedId){
+                    fetch(`http://localhost:5000/book/${_id}/decrease`,{
+                        method:'PATCH',
+                        headers:{
+                            'content-type':'application/json'
+                        },
+                        body:JSON.stringify(book)
+                    })
                     Swal.fire("Books Borrowed");
+                    setIsModalOpen(false);
+                }
+                else{
+                    Swal.fire({
+                        icon: "error",
+                        title: "Oops...",
+                        text: "You have already borrowed this book",
+                        footer: '<a href="#">Why do I have this issue?</a>'
+                      });
+                      setIsModalOpen(false); 
                 }
             })
-        });
-        }
-        else{
+                
+        } else {
             Swal.fire({
                 icon: "error",
                 title: "Oops...",
                 text: "Book is unavailable",
                 footer: '<a href="#">Why do I have this issue?</a>'
-              });
+            });
         }
     };
+    
+    
 
     return (
         <div className="flex justify-center">

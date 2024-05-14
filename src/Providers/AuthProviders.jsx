@@ -2,6 +2,7 @@ import { createContext, useEffect, useState } from "react";
 import app from "../Firebase/Firebase.config";
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 export const AuthContext = createContext(null)
 const auth = getAuth(app)

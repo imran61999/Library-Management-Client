@@ -32,7 +32,8 @@ import PrivateRoute from "../Pages/PrivateRoute/PrivateRoute";
         },
         {
           path:'/addBook',
-          element:<PrivateRoute><AddBook></AddBook></PrivateRoute>
+          element:<PrivateRoute><AddBook></AddBook></PrivateRoute>,
+          loader:()=> fetch('http://localhost:5000/books')
         },
         {
           path:'/allBook',

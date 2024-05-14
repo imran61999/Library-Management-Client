@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { Link, json } from "react-router-dom";
+import { Link, json, useNavigate } from "react-router-dom";
 import logo from "../../assets/library.png"
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProviders";
@@ -7,6 +7,7 @@ import { AuthContext } from "../../Providers/AuthProviders";
 const Register = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const { createUser, updateUserProfile } = useContext(AuthContext);
+    const navigate = useNavigate();
 
 
     const onSubmit = data =>{
@@ -20,6 +21,7 @@ const Register = () => {
             const loggedUser = res.user;
             console.log('user created successfully', loggedUser)
             updateUserProfile(data.name, data.photo)
+            navigate('/')
 
         })
     }
