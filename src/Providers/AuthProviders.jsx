@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import app from "../Firebase/Firebase.config";
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
+import Swal from "sweetalert2";
 
 export const AuthContext = createContext(null)
 const auth = getAuth(app)
@@ -21,8 +22,8 @@ const AuthProviders = ({children}) => {
         setLoading(true)
         signOut(auth)
         .then(()=>{
-            console.log('user logged out successfully');
-        })
+            Swal.fire("You Logged Out Successfully");
+          })
     }
 
     const updateUserProfile = (name, photo)=>{

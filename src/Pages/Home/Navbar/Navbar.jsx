@@ -1,15 +1,33 @@
 
 import logo from "../../../assets/library.png";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../Providers/AuthProviders";
 import { Link, NavLink } from "react-router-dom";
 
 
 const Navbar = () => {
-  const { logOut } = useContext(AuthContext)
+  const { logOut, loading, user } = useContext(AuthContext)
+  const [theme, setTheme] = useState('light')
+
+  useEffect(()=>{
+    localStorage.setItem('theme', theme)
+    const localTheme = localStorage.getItem('theme')
+    document.querySelector('html').setAttribute('data-theme', localTheme)
+  },[theme])
+
   const handleLogout = ()=>{
-    logOut();
+    logOut()
   }
+
+  const handleToggle = e =>{
+    if(e.target.checked){
+      setTheme('synthwave')
+    }
+    else{
+      setTheme('light')
+    }
+  }
+
   const links = 
   <>
         <li><NavLink to="/">Home</NavLink></li>
@@ -36,10 +54,32 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-  <Link to="/login"><button className="btn btn-ghost btn-sm">Login</button></Link>
-  <Link to="/register"><button className="btn btn-ghost btn-sm">Register</button></Link>
-  <button onClick={handleLogout} className="btn btn-ghost btn-sm">Logout</button>
+    {
+      loading?(
+        <p>Loading...</p>
+      )
+      :
+      user ?
+      (
+        <>
+        <div className="avatar">
+          <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+            <img title={user?.displayName} src={user?.photoURL} />
+          </div>
+        </div>
+        <button onClick={handleLogout} className="btn btn-ghost btn-sm">Logout</button>
+       </>
+       )
+        : 
+       (
+        <>
+           <Link to="/login"><button className="btn btn-ghost btn-sm">Login</button></Link>
+          <Link to="/register"><button className="btn btn-ghost btn-sm">Register</button></Link>
+         </>
+       )
+    }
   </div>
+  <input onChange={handleToggle} type="checkbox" value="synthwave" className="toggle theme-controller"/>
 </div>
     );
 };

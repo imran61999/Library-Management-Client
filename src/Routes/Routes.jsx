@@ -10,6 +10,7 @@ import Update from "../Pages/Update/Update";
 import SameCategory from "../Pages/SameCategory/SameCategory";
 import Details from "../Pages/Details/Details";
 import BorrowedBooks from "../Pages/BorowedBooks/BorrowedBooks";
+import PrivateRoute from "../Pages/PrivateRoute/PrivateRoute";
 
   export const router = createBrowserRouter([
     {
@@ -31,11 +32,11 @@ import BorrowedBooks from "../Pages/BorowedBooks/BorrowedBooks";
         },
         {
           path:'/addBook',
-          element:<AddBook></AddBook>
+          element:<PrivateRoute><AddBook></AddBook></PrivateRoute>
         },
         {
           path:'/allBook',
-          element:<AllBook></AllBook>
+          element:<PrivateRoute><AllBook></AllBook></PrivateRoute>
         },
         {
           path:'/update/:id',
@@ -54,7 +55,7 @@ import BorrowedBooks from "../Pages/BorowedBooks/BorrowedBooks";
         },
         {
           path:'/borrowedBooks',
-          element:<BorrowedBooks></BorrowedBooks>
+          element:<PrivateRoute><BorrowedBooks></BorrowedBooks></PrivateRoute>
         }
       ]
     },
