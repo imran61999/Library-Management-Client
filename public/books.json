@@ -1,110 +1,257 @@
 [
     {
       "image": "https://i.ibb.co/PZHrfRy/book1.jpg",
-      "name": "The Great Gatsby",
+      "book_name": "The Great Gatsby",
       "quantity": 50,
       "author_name": "F. Scott Fitzgerald",
-      "category": "Novel",
-      "short_description": "A story of love, greed, and the American Dream.",
+      "category_name": "Novel",
+      "description": "A story of love, greed, and the American Dream.",
       "rating": 4.5
     },
     {
       "image": "https://i.ibb.co/JWLrSXk/book2.jpg",
-      "name": "To Kill a Mockingbird",
+      "book_name": "To Kill a Mockingbird",
       "quantity": 40,
       "author_name": "Harper Lee",
-      "category": "Novel",
-      "short_description": "A powerful exploration of racial injustice and morality.",
+      "category_name": "Novel",
+      "description": "A powerful exploration of racial injustice and morality.",
       "rating": 4.8
     },
     {
       "image": "https://i.ibb.co/D9D2zr2/book3.jpg",
-      "name": "1984",
+      "book_name": "1984",
       "quantity": 60,
       "author_name": "George Orwell",
-      "category": "Novel",
-      "short_description": "A dystopian novel depicting a totalitarian regime.",
+      "category_name": "Novel",
+      "description": "A dystopian novel depicting a totalitarian regime.",
       "rating": 4.7
     },
     {
       "image": "https://i.ibb.co/cN4kSwf/book4.jpg",
-      "name": "The Catcher in the Rye",
+      "book_name": "The Catcher in the Rye",
       "quantity": 30,
       "author_name": "J.D. Salinger",
-      "category": "Novel",
-      "short_description": "A coming-of-age story that has become a classic of modern literature.",
+      "category_name": "Novel",
+      "description": "A coming-of-age story that has become a classic of modern literature.",
       "rating": 4.2
     },
     {
       "image": "https://i.ibb.co/84Fh1vK/book5.jpg",
-      "name": "Pride and Prejudice",
+      "book_name": "Pride and Prejudice",
       "quantity": 45,
       "author_name": "Jane Austen",
-      "category": "Novel",
-      "short_description": "A romantic comedy of manners.",
+      "category_name": "Novel",
+      "description": "A romantic comedy of manners.",
       "rating": 4.6
     },
     {
       "image": "https://i.ibb.co/c2v88hn/book6.png",
-      "name": "The Hobbit",
+      "book_name": "The Hobbit",
       "quantity": 55,
       "author_name": "J.R.R. Tolkien",
-      "category": "Novel",
-      "short_description": "A tale of adventure and heroism.",
+      "category_name": "Novel",
+      "description": "A tale of adventure and heroism.",
       "rating": 4.9
     },
     {
       "image": "https://i.ibb.co/y6NtkMq/book7.jpg",
-      "name": "The Hunger Games",
+      "book_name": "The Hunger Games",
       "quantity": 35,
       "author_name": "Suzanne Collins",
-      "category": "Thriller",
-      "short_description": "A dystopian novel set in a post-apocalyptic world.",
+      "category_name": "Thriller",
+      "description": "A dystopian novel set in a post-apocalyptic world.",
       "rating": 4.4
     },
     {
       "image": "https://i.ibb.co/dcLzc1B/book8.jpg",
-      "name": "Harry Potter and the Philosopher's Stone",
+      "book_name": "Harry Potter and the Philosopher's Stone",
       "quantity": 25,
       "author_name": "J.K. Rowling",
-      "category": "Fantasy",
-      "short_description": "The first book in the Harry Potter series.",
+      "category_name": "Fantasy",
+      "description": "The first book in the Harry Potter series.",
       "rating": 4.9
     },
     {
       "image": "https://i.ibb.co/QP1fPHz/book9.jpg",
-      "name": "The Da Vinci Code",
+      "book_name": "The Da Vinci Code",
       "quantity": 20,
       "author_name": "Dan Brown",
-      "category": "Thriller",
-      "short_description": "A gripping mystery that explores religious history.",
+      "category_name": "Thriller",
+      "description": "A gripping mystery that explores religious history.",
       "rating": 4.3
     },
     {
       "image": "https://i.ibb.co/6Hr0BDR/book10.jpg",
-      "name": "The Alchemist",
+      "book_name": "The Alchemist",
       "quantity": 50,
       "author_name": "Paulo Coelho",
-      "category": "Novel",
-      "short_description": "A philosophical novel about following one's dreams.",
+      "category_name": "Novel",
+      "description": "A philosophical novel about following one's dreams.",
       "rating": 4.7
     },
     {
       "image": "https://i.ibb.co/54g57xJ/book11.jpg",
-      "name": "The Girl with the Dragon Tattoo",
+      "book_name": "The Girl with the Dragon Tattoo",
       "quantity": 40,
       "author_name": "Stieg Larsson",
-      "category": "Thriller",
-      "short_description": "A gripping thriller that delves into corruption and intrigue.",
+      "category_name": "Thriller",
+      "description": "A gripping thriller that delves into corruption and intrigue.",
       "rating": 4.5
     },
     {
       "image": "https://i.ibb.co/TBVZcfG/book12.jpg",
-      "name": "The Lord of the Rings",
+      "book_name": "The Lord of the Rings",
       "quantity": 60,
       "author_name": "J.R.R. Tolkien",
-      "category": "Fantasy",
-      "short_description": "An epic high fantasy novel.",
+      "category_name": "Fantasy",
+      "description": "An epic high fantasy novel.",
       "rating": 4.8
-    }
-  ]
+    },
+    {
+      "book_name": "Empires of the Ancient World",
+      "image": "https://i.ibb.co/PZHrfRy/book1.jpg",
+      "quantity": 25,
+      "author_name": "Alexander Smith",
+      "category_name": "History",
+      "description": "Explore the rise and fall of the great empires that shaped our world, from the Egyptians to the Romans.",
+      "rating": 4.7
+    },
+    {
+      "book_name": "The Age of Discovery",
+      "image": "https://i.ibb.co/TBVZcfG/book12.jpg",
+      "quantity": 18,
+      "author_name": "Eleanor Johnson",
+      "category_name": "History",
+      "description": "Discover the journeys of Columbus, Magellan, and other explorers who changed the course of history.",
+      "rating": 4.5
+    },
+    {
+      "book_name": "World War II: A Comprehensive History",
+      "image": "https://i.ibb.co/6Hr0BDR/book10.jpg",
+      "quantity": 30,
+      "author_name": "Robert Thompson",
+      "category_name": "History",
+      "description": "Delve into the events, strategies, and individuals that defined the deadliest conflict in human history.",
+      "rating": 4.9
+    },
+    {
+      "book_name": "The Rise and Fall of the Roman Empire",
+      "image": "https://i.ibb.co/dcLzc1B/book8.jpg",
+      "quantity": 12,
+      "author_name": "Julia Anderson",
+      "category_name": "History",
+      "description": "Follow the trajectory of Rome from its humble beginnings to its eventual collapse, and the legacy it left behind.",
+      "rating": 4.8
+    },
+    {
+      "book_name": "Tragedy and Triumph: A Collection of Shakespearean Plays",
+      "image": "https://i.ibb.co/dcLzc1B/book8.jpg",
+      "quantity": 20,
+      "author_name": "William Shakespeare",
+      "category_name": "Drama",
+      "description": "Experience the brilliance of Shakespeare with this collection of his most iconic tragedies and triumphant dramas.",
+      "rating": 4.8
+    },
+    {
+      "book_name": "A Streetcar Named Desire",
+      "image": "https://i.ibb.co/QP1fPHz/book9.jpg",
+      "quantity": 15,
+      "author_name": "Tennessee Williams",
+      "category_name": "Drama",
+      "description": "Enter the world of Blanche DuBois and Stanley Kowalski in this timeless tale of desire, delusion, and desperation.",
+      "rating": 4.6
+    },
+    {
+      "book_name": "Death of a Salesman",
+      "image": "https://i.ibb.co/TBVZcfG/book12.jpg",
+      "quantity": 25,
+      "author_name": "Arthur Miller",
+      "category_name": "Drama",
+      "description": "Follow Willy Loman as he grapples with the American Dream and the harsh realities of life in this classic tragedy.",
+      "rating": 4.7
+    },
+    {
+      "book_name": "The Glass Menagerie",
+      "image": "https://i.ibb.co/TBVZcfG/book12.jpg",
+      "quantity": 18,
+      "author_name": "Tennessee Williams",
+      "category_name": "Drama",
+      "description": "Join Tom Wingfield as he navigates the fragile world of his mother and sister in this poignant family drama.",
+      "rating": 4.5
+    },
+    {
+      "book_name": "Hamlet",
+      "image": "https://i.ibb.co/cN4kSwf/book4.jpg",
+      "quantity": 30,
+      "author_name": "William Shakespeare",
+      "category_name": "Drama",
+      "description": "Experience the timeless tale of revenge, madness, and mortality in Shakespeare's most famous tragedy.",
+      "rating": 4.9
+    },
+    {
+      "book_name": "A Doll's House",
+      "image": "https://i.ibb.co/84Fh1vK/book5.jpg",
+      "quantity": 12,
+      "author_name": "Henrik Ibsen",
+      "category_name": "Drama",
+      "description": "Witness the groundbreaking exploration of gender roles and societal expectations in this influential play.",
+      "rating": 4.8
+    },
+      {
+        "book_name": "Coding Fundamentals: A Beginner's Guide",
+        "image": "https://i.ibb.co/84Fh1vK/book5.jpg",
+        "quantity": 20,
+        "author_name": "Lisa Johnson",
+        "category_name": "Computer & Tech",
+        "description": "Learn the basics of programming and software development in this comprehensive beginner's guide.",
+        "rating": 4.5
+      },
+      {
+        "book_name": "The Tech Revolution: From Mainframes to AI",
+        "image": "https://i.ibb.co/84Fh1vK/book5.jpg",
+        "quantity": 15,
+        "author_name": "Michael Lee",
+        "category_name": "Computer & Tech",
+        "description": "Trace the evolution of technology from its earliest beginnings to the cutting-edge innovations of today.",
+        "rating": 4.8
+      },
+      {
+        "book_name": "Cybersecurity Essentials: Protecting Your Digital World",
+        "image": "https://i.ibb.co/84Fh1vK/book5.jpg",
+        "quantity": 25,
+        "author_name": "Emily Brown",
+        "category_name": "Computer & Tech",
+        "description": "Discover the fundamentals of cybersecurity and safeguard your digital assets from online threats.",
+        "rating": 4.6
+      },
+      {
+        "book_name": "Machine Learning Mastery: Algorithms and Applications",
+        "image": "https://i.ibb.co/84Fh1vK/book5.jpg",
+        "quantity": 18,
+        "author_name": "David Kim",
+        "category_name": "Computer & Tech",
+        "description": "Unlock the power of machine learning with this comprehensive guide to algorithms and real-world applications.",
+        "rating": 4.9
+      },
+      {
+        "book_name": "The Complete Guide to Web Development",
+        "image": "https://i.ibb.co/84Fh1vK/book5.jpg",
+        "quantity": 30,
+        "author_name": "Sarah Smith",
+        "category_name": "Computer & Tech",
+        "description": "Master the essential skills and tools needed to become a proficient web developer.",
+        "rating": 4.7
+      },
+      {
+        "book_name": "Data Science Foundations: Principles and Practice",
+        "image": "https://i.ibb.co/84Fh1vK/book5.jpg",
+        "quantity": 12,
+        "author_name": "John Davis",
+        "category_name": "Computer & Tech",
+        "description": "Explore the core concepts of data science and unleash the potential of data-driven insights.",
+        "rating": 4.8
+      }
+    ]
+    
+  
+  

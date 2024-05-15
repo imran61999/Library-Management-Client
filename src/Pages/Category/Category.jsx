@@ -4,14 +4,20 @@ import Card from "./Card";
 
 const Category = () => {
     const [categories, setCategories]=useState([])
+    const [loading, setLoading] = useState(true)
 
     useEffect(()=>{
-        fetch('http://localhost:5000/category')
+        fetch('https://library-management-server-pi.vercel.app/category')
         .then(res => res.json())
         .then(data =>{
             setCategories(data)
+            setLoading(false)
         })
     },[])
+
+    if(loading){
+        return <span className="loading loading-spinner loading-lg"></span>
+    }
     return (
         <div className="mb-8">
             <h2 className="text-3xl font-bold text-center">Category: {categories.length}</h2>

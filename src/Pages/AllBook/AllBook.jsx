@@ -3,12 +3,14 @@ import BookCard from "../BookCard/BookCard";
 
 const AllBook = () => {
     const [allBooks, setAllBooks] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('http://localhost:5000/books')
+        fetch('https://library-management-server-pi.vercel.app/books',{credentials:'include'})
             .then(res => res.json())
             .then(data => {
                 setAllBooks(data);
+                setLoading(false)
             });
     }, []);
 
@@ -18,6 +20,9 @@ const AllBook = () => {
         setAllBooks(remaining);
     }
 
+    if(loading){
+        return <span className="loading loading-spinner loading-lg"></span>
+    }
 
     return (
         <div className="mb-6">

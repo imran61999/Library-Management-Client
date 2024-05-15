@@ -4,6 +4,7 @@ import SameCard from "./SameCard";
 const SameCategory = () => {
     const {category} = useParams();
     const books = useLoaderData();
+    
     return (
         <div>
             <h2 className="text-3xl text-center">Category: {category}</h2>

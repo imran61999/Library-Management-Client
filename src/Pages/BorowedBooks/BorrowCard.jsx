@@ -4,7 +4,7 @@ const BorrowCard = ({book, onReturn }) => {
     const { _id, image, book_name, category_name, return_date, borrow_date } = book;
 
     const handleReturn =()=>{
-        fetch(`http://localhost:5000/book/${_id}/increase`,{
+        fetch(`https://library-management-server-pi.vercel.app/book/${_id}/increase`,{
             method:'PATCH',
             headers:{
                 'content-type':'application/json'
@@ -15,7 +15,7 @@ const BorrowCard = ({book, onReturn }) => {
         .then(data =>{
             console.log(data)
             if(data.modifiedCount>0){
-                fetch(`http://localhost:5000/borrowedBooks/${_id}`,{
+                fetch(`https://library-management-server-pi.vercel.app/borrowedBooks/${_id}`,{
                     method:'DELETE',
                 })
                 .then(res => res.json())

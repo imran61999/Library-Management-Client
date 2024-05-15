@@ -33,7 +33,7 @@ import PrivateRoute from "../Pages/PrivateRoute/PrivateRoute";
         {
           path:'/addBook',
           element:<PrivateRoute><AddBook></AddBook></PrivateRoute>,
-          loader:()=> fetch('http://localhost:5000/books')
+          loader:()=> fetch('https://library-management-server-pi.vercel.app/books')
         },
         {
           path:'/allBook',
@@ -42,17 +42,17 @@ import PrivateRoute from "../Pages/PrivateRoute/PrivateRoute";
         {
           path:'/update/:id',
           element: <Update></Update>,
-          loader: ({params})=>fetch(`http://localhost:5000/updateBook/${params.id}`)
+          loader: ({params})=>fetch(`https://library-management-server-pi.vercel.app/updateBook/${params.id}`)
         },
         {
           path:'/sameCategory/:category',
           element:<SameCategory></SameCategory>,
-          loader: ({params})=>fetch(`http://localhost:5000/sameCategory/${params.category}`)
+          loader: ({params})=>fetch(`https://library-management-server-pi.vercel.app/sameCategory/${params.category}`)
         },
         {
           path:'/details/:id',
           element:<Details></Details>,
-          loader: ({params})=>fetch(`http://localhost:5000/details/${params.id}`)
+          loader: ({params})=>fetch(`https://library-management-server-pi.vercel.app/details/${params.id}`)
         },
         {
           path:'/borrowedBooks',
