@@ -7,7 +7,7 @@ const Category = () => {
     const [loading, setLoading] = useState(true)
 
     useEffect(()=>{
-        fetch('https://library-management-server-pi.vercel.app/category')
+        fetch('http://localhost:5000/category')
         .then(res => res.json())
         .then(data =>{
             setCategories(data)

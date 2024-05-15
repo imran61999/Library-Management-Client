@@ -15,7 +15,7 @@ const Update = () => {
     const onSubmit = data =>{
         
         const updatedBook = { ...data}
-        fetch(`https://library-management-server-pi.vercel.app/update/${_id}`,{
+        fetch(`http://localhost:5000/update/${_id}`,{
             method:'PUT',
             headers:{
                 'content-type':'application/json'

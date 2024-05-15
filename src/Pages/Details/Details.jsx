@@ -33,7 +33,7 @@ const Details = () => {
     
     
         if(quantity > 0) {
-            fetch('https://library-management-server-pi.vercel.app/borrow/books',{
+            fetch('http://localhost:5000/borrow/books',{
                 method:'POST',
                 headers:{
                     'content-type':'application/json'
@@ -43,7 +43,7 @@ const Details = () => {
             .then(res => res.json())
             .then(data => {
                 if(data.insertedId){
-                    fetch(`https://library-management-server-pi.vercel.app/book/${_id}/decrease`,{
+                    fetch(`http://localhost:5000/book/${_id}/decrease`,{
                         method:'PATCH',
                         headers:{
                             'content-type':'application/json'

@@ -10,7 +10,7 @@ const AddBook = () => {
         
         console.log(data)
 
-       fetch('https://library-management-server-pi.vercel.app/books',{
+       fetch('http://localhost:5000/books',{
         method:'POST',
         headers:{
             'content-type':'application/json'
