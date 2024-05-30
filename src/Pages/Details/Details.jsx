@@ -33,7 +33,7 @@ const Details = () => {
         const formattedDate = currentDate.toISOString().split('T')[0];
     
         const borrowData = { 
-            userId: book._id, 
+            bookId: book._id, 
             image: book.image, 
             book_name: book.book_name, 
             author_name: book.author_name,

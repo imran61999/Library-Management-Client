@@ -31,9 +31,10 @@ const Navbar = () => {
   const links = 
   <>
         <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="/addBook">Add Book</NavLink></li>
+        {/* <li><NavLink to="/addBook">Add Book</NavLink></li> */}
         <li><NavLink to="/allBook">All Book</NavLink></li>
-        <li><NavLink to="/borrowedBooks">Borrowed Books</NavLink></li>
+        {/* <li><NavLink to="/borrowedBooks">Borrowed Books</NavLink></li> */}
+        <li><NavLink to="/dashboard/borrowedBooks">Dashboard</NavLink></li>
   </>
     return (
         <div className="navbar bg-base-100">

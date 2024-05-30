@@ -11,6 +11,7 @@ import SameCategory from "../Pages/SameCategory/SameCategory";
 import Details from "../Pages/Details/Details";
 import BorrowedBooks from "../Pages/BorowedBooks/BorrowedBooks";
 import PrivateRoute from "../Pages/PrivateRoute/PrivateRoute";
+import Dashboard from "../Layout/Dashboard";
 
   export const router = createBrowserRouter([
     {
@@ -52,7 +53,7 @@ import PrivateRoute from "../Pages/PrivateRoute/PrivateRoute";
         {
           path:'/details/:id',
           element:<PrivateRoute><Details></Details></PrivateRoute>,
-          loader: ({params})=>fetch(`http://localhost:5000/details/${params.id}`)
+          // loader: ({params})=>fetch(`http://localhost:5000/details/${params.id}`)
         },
         {
           path:'/borrowedBooks',
@@ -60,5 +61,19 @@ import PrivateRoute from "../Pages/PrivateRoute/PrivateRoute";
         }
       ]
     },
+    {
+      path:"/dashboard",
+      element:<Dashboard></Dashboard>,
+      children:[
+        {
+          path:'borrowedBooks',
+          element:<BorrowedBooks></BorrowedBooks>
+        },
+        {
+          path:'addBook',
+          element:<AddBook></AddBook>
+        }
+      ]
+    }
   ]);
   
