@@ -51,7 +51,7 @@ import PrivateRoute from "../Pages/PrivateRoute/PrivateRoute";
         },
         {
           path:'/details/:id',
-          element:<Details></Details>,
+          element:<PrivateRoute><Details></Details></PrivateRoute>,
           loader: ({params})=>fetch(`http://localhost:5000/details/${params.id}`)
         },
         {

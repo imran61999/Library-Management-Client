@@ -1,12 +1,27 @@
 import { useContext, useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProviders";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
+import { useQuery } from "@tanstack/react-query";
 
 const Details = () => {
+    const axiosPublic = useAxiosPublic();
     const { user } = useContext(AuthContext);
-    const book = useLoaderData();
+    // const book = useLoaderData();
+    const id = useParams().id;
+    // console.log(typeof id)
+
+    const { data:book =[], refetch } = useQuery({
+        queryKey:['book',id],
+        queryFn: async ()=>{
+            const res = await axiosPublic.get(`/details/${id}`);
+            console.log('response data ',res.data);
+            return res.data;
+        }
+    })
+    
     const { _id, image, book_name, author_name, category_name, rating, quantity, description } = book;
     console.log('book',book)
 
@@ -52,6 +67,7 @@ const Details = () => {
                     })
                     Swal.fire("Books Borrowed");
                     setIsModalOpen(false);
+                    refetch();
                 }
                 else{
                     Swal.fire({

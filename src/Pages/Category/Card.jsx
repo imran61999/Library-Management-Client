@@ -5,7 +5,7 @@ const Card = ({categoryInfo}) => {
     const { image , category} = categoryInfo;
     return (
         <Link to={`/sameCategory/${category}`}>
-          <div className="card bg-base-100 shadow-xl">
+          <div className="card h-80 bg-base-100 shadow-xl">
           <figure><img src={image} alt="Shoes" /></figure>
           <div className="card-body">
             <h2 className="card-title">
