@@ -3,10 +3,14 @@ import { Link, json, useNavigate } from "react-router-dom";
 import logo from "../../assets/library.png"
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProviders";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
+// import { reset } from "nodemon";
+import Swal from "sweetalert2";
 
 const Register = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const { createUser, updateUserProfile } = useContext(AuthContext);
+    const axiosPublic = useAxiosPublic();
     const navigate = useNavigate();
 
 
@@ -21,6 +25,26 @@ const Register = () => {
             const loggedUser = res.user;
             console.log('user created successfully', loggedUser)
             updateUserProfile(data.name, data.photo)
+            .then(()=>{
+                const userInfo = {
+                    name: data.name,
+                    email: data.email
+                }
+                axiosPublic.post('/users', userInfo)
+                .then(res => {
+                    if(res.data.insertedId){
+                        console.log('User added to the database')
+                        reset()
+                        Swal.fire({
+                            position: 'center',
+                            icon:'success',
+                            title:"User created successfully",
+                            showConfirmButton:false,
+                            timer:1500
+                        })
+                    }
+                })
+            })
             navigate('/')
 
         })

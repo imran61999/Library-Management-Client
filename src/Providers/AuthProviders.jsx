@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import app from "../Firebase/Firebase.config";
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
+import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -10,6 +10,7 @@ const auth = getAuth(app)
 const AuthProviders = ({children}) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    const googleProvider = new GoogleAuthProvider();
 
     const createUser =(email, password)=>{
         return createUserWithEmailAndPassword(auth, email, password)
@@ -18,6 +19,10 @@ const AuthProviders = ({children}) => {
     const signIn=(email, password)=>{
         setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
+    }
+    const googleSignIn =()=>{
+        setLoading(true);
+        return signInWithPopup(auth, googleProvider)
     }
 
     const logOut = ()=>{
@@ -30,12 +35,7 @@ const AuthProviders = ({children}) => {
 
     const updateUserProfile = (name, photo)=>{
         return updateProfile(auth.currentUser, { displayName:name, photoURL: photo})
-        .then(()=>{
-            console.log('profile updated')
-        })
-        .catch( error =>{
-            console.log(error)
-        })
+        
     }
     useEffect(()=>{
         const unSubscribe = onAuthStateChanged(auth, currentUser=>{
@@ -67,7 +67,7 @@ const AuthProviders = ({children}) => {
     },[])
 
 
-    const authInfo ={ createUser, signIn, user, logOut, updateUserProfile, loading }
+    const authInfo ={ createUser, signIn, user, logOut, updateUserProfile, loading,googleSignIn }
     return (
         <AuthContext.Provider value={authInfo}>
             {children}
